@@ -1,0 +1,9 @@
+venv/
+data/*
+results
+*__pycache__*
+libsvm/
+src/libsvm-string-3.24/
+src/data/*
+src/plain/data/*
+src/mpc/data/*
