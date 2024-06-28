@@ -6,7 +6,9 @@ pip install -r requirements.txt
 ```
 
 ## Download dataset
-TODO: Add google drive link to download dataset
+Dataset can be found at https://drive.google.com/file/d/1m8RU9i4cZDj-DOIEzSuvMjzjqxBCab1e/view?usp=sharing
+
+Download and unzip the file to the folder `data`
 
 ## Run plaintext models
 ```
