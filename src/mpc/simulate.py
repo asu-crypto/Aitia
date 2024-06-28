@@ -20,7 +20,7 @@ sys.path.append(os.path.abspath(os.path.join(os.getcwd(), os.pardir)))
 from config import sigma_map, tol_map
 from mpc.nonlinear.bsgd import BSGD
 from multiprocess_launcher import MultiProcessLauncher
-import matplotlib.pyplot as plt
+
 
 # function to train using GP Regression
 def train_mp_gp(args, train_features, train_labels, test_features, test_labels):
@@ -109,10 +109,7 @@ def train_mp_bsgd(args, train_features, train_labels, test_features, test_labels
         res_y = bsgd.predict(test_features) - test_labels
     test_end = time.time()
     dep_xy = gaussian_score(test_features, res_y)
-    plt.scatter(train_features.numpy(),train_labels.numpy())
-    plt.scatter(test_features.get_plain_text().numpy(),test_labels.get_plain_text().numpy(),color='orange')
-    plt.plot(test_features.get_plain_text().numpy(),pred_result.get_plain_text().numpy())
-    plt.savefig("bsgd.png")
+    
     print("Rounds: {}".format(comm.get().comm_rounds))
     print("Bytes: {}".format(comm.get().comm_bytes))
     print("Communication time: {}".format(comm.get().comm_time))
